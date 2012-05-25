@@ -52,7 +52,6 @@
     rm_callback,
     
     // A few convenient shortcuts.
-    window = this,
     FALSE = !1,
     
     // Reused internal strings.
