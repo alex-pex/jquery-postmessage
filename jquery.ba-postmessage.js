@@ -1,5 +1,5 @@
 /*!
- * jQuery postMessage - v0.5 - 9/11/2009
+ * jQuery postMessage - v0.6-dev - 25/11/2013
  * http://benalman.com/projects/jquery-postmessage-plugin/
  * 
  * Copyright (c) 2009 "Cowboy" Ben Alman
@@ -8,8 +8,6 @@
  */
 
 // Script: jQuery postMessage: Cross-domain scripting goodness
-//
-// *Version: 0.5, Last updated: 9/11/2009*
 // 
 // Project Home - http://benalman.com/projects/jquery-postmessage-plugin/
 // GitHub       - http://github.com/cowboy/jquery-postmessage/
@@ -107,9 +105,8 @@
     target = target || parent;
     
     if ( has_postMessage ) {
-      // The browser supports window.postMessage, so call it with a targetOrigin
-      // set appropriately, based on the target_url parameter.
-      target[postMessage]( message, target_url.replace( /([^:]+:\/\/[^\/]+).*/, '$1' ) );
+      // The browser supports window.postMessage.
+      target[postMessage]( message, '*' );
       
     } else if ( target_url ) {
       // The browser does not support window.postMessage, so set the location
